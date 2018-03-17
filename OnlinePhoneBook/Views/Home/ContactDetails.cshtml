@@ -1,0 +1,57 @@
+﻿@model OnlinePhoneBook.Models.contactdetails_tb
+
+<div class="card">
+    <div class="card-header">
+            Contact Details
+       <div class="float-right">@Html.ActionLink("Edit this contact", "EditContact", new { id = Model.id })</div>
+    </div>
+    <div class="card-body">
+        <div class="row">
+
+
+            <div class="col-md-6">
+                <table class="table table-responsive">
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.fname)</th>
+                        <td>@Html.DisplayFor(model => model.fname)</td>
+                    </tr>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.lname)</th>
+                        <td>@Html.DisplayFor(model => model.lname)</td>
+                    </tr>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.maincontact_number)</th>
+                        <td>@Html.DisplayFor(model => model.maincontact_number)</td>
+                    </tr>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.secondarycontact_number)</th>
+                        <td>@Html.DisplayFor(model => model.secondarycontact_number)</td>
+                    </tr>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.email)</th>
+                        <td>@Html.DisplayFor(model => model.email)</td>
+                    </tr>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.address)</th>
+                        <td>@Html.DisplayFor(model => model.address)</td>
+                    </tr>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.country_fid)</th>
+                        <td>@Html.DisplayFor(model => model.Country_tb.country_name)</td>
+                    </tr>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.type_fid)</th>
+                    <td>@Html.DisplayFor(model => model.type_tb.type)</td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-5">
+            <img src="@Url.Content(Model.imagepath ?? "~/Image/no_image.png")" alt="Image" class="img-fluid img-thumbnail" style="max-height:100%;max-width:100%" />
+        </div>
+    </div>
+    </div>
+    <div class="card-footer">
+        <div class="text-center">@Html.ActionLink("Back to contact list", "Index")</div>
+    </div>
+</div>
+    

@@ -1,0 +1,80 @@
+﻿@using PagedList.Mvc;
+@using PagedList;
+
+@model IPagedList<OnlinePhoneBook.Models.contactdetails_tb>
+
+@{
+    ViewBag.Title = "Index";
+    <link href="@Url.Content("~/Assets/css/PagedList.css")" rel="stylesheet" />
+}
+
+
+<div class="card mb-3">
+    <div class="card-header">
+        <i class="fa fa-table"></i> My Contact List
+    </div>
+
+    <div class="card-body">
+        <div class="row">
+            <div class="offset-md-8 col-md-4">
+                @using (Html.BeginForm("Index", "Home", FormMethod.Get, new { @class = "form-inline" }))
+            {
+                    
+                        @Html.TextBox("search", "", new { @class = "form-control", @placeholder = "Enter first name or number" })
+                        <input class="btn btn-info m-2" value="Search" type="submit" />
+                                    }
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="75%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th style="width:30%">Name</th>
+                        <th style="width:15%">Contact Number</th>
+                        <th style="width:10%; text-align:center">Coutnry</th>
+                        <th style="width:10%; text-align:center">Type</th>
+                        <th style="width:20%; text-align:center">Options</th>
+                    </tr>
+                    @if(Model.Count() == 0)
+                    {
+                        <tr>
+                            <td colspan="5" style="text-align:center;color:red;">There is no matching rows for this search</td>
+                        </tr>
+                    }
+                </thead>
+                @foreach (var item in Model)
+                {
+                    using (Html.BeginForm("Delete", "Home", new { id = item.id }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <tr>
+                            <td style="width:30%">
+                                @Html.DisplayFor(modelItem => item.fname)
+                                @Html.DisplayFor(modelItem => item.lname)
+                            </td>
+                            <td style="width:15%; text-align:center">
+                                @Html.DisplayFor(modelItem => item.maincontact_number)
+                            </td>
+                            <td style="width:10%; text-align:center">
+                                @Html.DisplayFor(modelItem => item.Country_tb.country_name)
+                            </td>
+                            <td style="width:10%; text-align:center">
+                                @Html.DisplayFor(modelItem => item.type_tb.type)
+                            </td>
+                            <td style="width:20%">
+                                @Html.ActionLink("Edit", "EditContact", new { id = item.id }, new { @class = "btn btn-primary" })
+                                @Html.ActionLink("Details", "ContactDetails", new { id = item.id }, new { @class = "btn btn-success" })
+                                <input type="submit" value="Delete" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete record');" />
+                            </td>
+                        </tr>
+                    }
+                }
+            </table>
+        </div>
+    </div>
+    <div class="card-footer">
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page}),
+       new PagedListRenderOptions() { Display = PagedListDisplayMode.IfNeeded, DisplayItemSliceAndTotal = true }
+       )
+    </div>
+</div>

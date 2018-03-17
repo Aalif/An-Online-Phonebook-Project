@@ -1,0 +1,37 @@
+﻿@model OnlinePhoneBook.Models.contactdetails_tb
+
+@{
+    ViewBag.Title = "Add Contact";
+}
+<div class="card">
+    <div class="card-header">
+        Add Contact
+    </div>
+
+    <div class="card-body">
+        @using (Html.BeginForm("AddContact", "Home", FormMethod.Post, new { enctype = "multipart/form-data", @class = "form-horizontal" }))
+        {
+            @Html.AntiForgeryToken()
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.Partial("_Partialaddedit")
+            <div class="form-group">
+                <div class="form-row">
+                    <div class="col-md-6">
+                        @Html.Label("Upload Image", htmlAttributes: new { @class = "control-label" })
+                        @Html.TextBox("file", null, new { type = "file", @class = "form-control-file", accept = "image/x-png,image/jpeg" })
+                        @Html.ValidationMessage("FileErrorMessage", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-row text-center">
+                    <div class="col-md-12">
+                        <input type="submit" value="Add Contact" class="btn btn-primary btn-lg" />
+                    </div>
+                </div>
+            </div>
+
+        }
+    </div>
+</div>

@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbphonebookModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="contactdetails_tb">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fname" Type="nvarchar" MaxLength="50" />
+    <Property Name="lname" Type="nvarchar" MaxLength="50" />
+    <Property Name="maincontact_number" Type="nvarchar" MaxLength="50" />
+    <Property Name="secondarycontact_number" Type="nvarchar" MaxLength="50" />
+    <Property Name="address" Type="nvarchar" MaxLength="100" />
+    <Property Name="email" Type="nvarchar" MaxLength="50" />
+    <Property Name="imagepath" Type="varchar(max)" />
+    <Property Name="country_fid" Type="int" />
+    <Property Name="type_fid" Type="int" />
+  </EntityType>
+  <EntityType Name="Country_tb">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="country_name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="type_tb">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="type" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="user_tb">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="user_email" Type="nvarchar" MaxLength="50" />
+    <Property Name="password" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_contactdetails_tb_Country_tb">
+    <End Role="Country_tb" Type="Self.Country_tb" Multiplicity="0..1" />
+    <End Role="contactdetails_tb" Type="Self.contactdetails_tb" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country_tb">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="contactdetails_tb">
+        <PropertyRef Name="country_fid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_contactdetails_tb_type_tb">
+    <End Role="type_tb" Type="Self.type_tb" Multiplicity="0..1" />
+    <End Role="contactdetails_tb" Type="Self.contactdetails_tb" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="type_tb">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="contactdetails_tb">
+        <PropertyRef Name="type_fid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="dbphonebookModelStoreContainer">
+    <EntitySet Name="contactdetails_tb" EntityType="Self.contactdetails_tb" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Country_tb" EntityType="Self.Country_tb" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="type_tb" EntityType="Self.type_tb" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="user_tb" EntityType="Self.user_tb" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_contactdetails_tb_Country_tb" Association="Self.FK_contactdetails_tb_Country_tb">
+      <End Role="Country_tb" EntitySet="Country_tb" />
+      <End Role="contactdetails_tb" EntitySet="contactdetails_tb" />
+    </AssociationSet>
+    <AssociationSet Name="FK_contactdetails_tb_type_tb" Association="Self.FK_contactdetails_tb_type_tb">
+      <End Role="type_tb" EntitySet="type_tb" />
+      <End Role="contactdetails_tb" EntitySet="contactdetails_tb" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

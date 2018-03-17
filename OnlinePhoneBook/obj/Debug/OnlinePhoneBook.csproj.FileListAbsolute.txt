@@ -1,0 +1,82 @@
+G:\phoneook\onlinephonebook\OnlinePhoneBook\bin\roslyn\csc.exe
+G:\phoneook\onlinephonebook\OnlinePhoneBook\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+G:\phoneook\onlinephonebook\OnlinePhoneBook\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+G:\phoneook\onlinephonebook\OnlinePhoneBook\bin\roslyn\Microsoft.CodeAnalysis.dll
+G:\phoneook\onlinephonebook\OnlinePhoneBook\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+G:\phoneook\onlinephonebook\OnlinePhoneBook\bin\roslyn\Microsoft.CSharp.Core.targets
+G:\phoneook\onlinephonebook\OnlinePhoneBook\bin\roslyn\Microsoft.VisualBasic.Core.targets
+G:\phoneook\onlinephonebook\OnlinePhoneBook\bin\roslyn\System.Collections.Immutable.dll
+G:\phoneook\onlinephonebook\OnlinePhoneBook\bin\roslyn\System.Reflection.Metadata.dll
+G:\phoneook\onlinephonebook\OnlinePhoneBook\bin\roslyn\vbc.exe
+G:\phoneook\onlinephonebook\OnlinePhoneBook\bin\roslyn\VBCSCompiler.exe
+G:\phoneook\onlinephonebook\OnlinePhoneBook\bin\roslyn\VBCSCompiler.exe.config
+G:\phoneook\onlinephonebook\OnlinePhoneBook\bin\OnlinePhoneBook.dll.config
+G:\phoneook\onlinephonebook\OnlinePhoneBook\bin\OnlinePhoneBook.dll
+G:\phoneook\onlinephonebook\OnlinePhoneBook\bin\OnlinePhoneBook.pdb
+G:\phoneook\onlinephonebook\OnlinePhoneBook\bin\EntityFramework.dll
+G:\phoneook\onlinephonebook\OnlinePhoneBook\bin\EntityFramework.SqlServer.dll
+G:\phoneook\onlinephonebook\OnlinePhoneBook\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+G:\phoneook\onlinephonebook\OnlinePhoneBook\bin\Microsoft.Web.Infrastructure.dll
+G:\phoneook\onlinephonebook\OnlinePhoneBook\bin\PagedList.dll
+G:\phoneook\onlinephonebook\OnlinePhoneBook\bin\PagedList.Mvc.dll
+G:\phoneook\onlinephonebook\OnlinePhoneBook\bin\System.Web.Helpers.dll
+G:\phoneook\onlinephonebook\OnlinePhoneBook\bin\System.Web.Mvc.dll
+G:\phoneook\onlinephonebook\OnlinePhoneBook\bin\System.Web.Razor.dll
+G:\phoneook\onlinephonebook\OnlinePhoneBook\bin\System.Web.Webpages.Deployment.dll
+G:\phoneook\onlinephonebook\OnlinePhoneBook\bin\System.Web.Webpages.dll
+G:\phoneook\onlinephonebook\OnlinePhoneBook\bin\System.Web.Webpages.Razor.dll
+G:\phoneook\onlinephonebook\OnlinePhoneBook\bin\EntityFramework.xml
+G:\phoneook\onlinephonebook\OnlinePhoneBook\bin\EntityFramework.SqlServer.xml
+G:\phoneook\onlinephonebook\OnlinePhoneBook\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+G:\phoneook\onlinephonebook\OnlinePhoneBook\bin\PagedList.xml
+G:\phoneook\onlinephonebook\OnlinePhoneBook\bin\PagedList.Mvc.xml
+G:\phoneook\onlinephonebook\OnlinePhoneBook\bin\System.Web.Razor.xml
+G:\phoneook\onlinephonebook\OnlinePhoneBook\bin\System.Web.Webpages.xml
+G:\phoneook\onlinephonebook\OnlinePhoneBook\bin\System.Web.Webpages.Deployment.xml
+G:\phoneook\onlinephonebook\OnlinePhoneBook\bin\System.Web.Webpages.Razor.xml
+G:\phoneook\onlinephonebook\OnlinePhoneBook\bin\System.Web.Helpers.xml
+G:\phoneook\onlinephonebook\OnlinePhoneBook\bin\System.Web.Mvc.xml
+G:\phoneook\onlinephonebook\OnlinePhoneBook\obj\Debug\OnlinePhoneBook.dll
+G:\phoneook\onlinephonebook\OnlinePhoneBook\obj\Debug\OnlinePhoneBook.pdb
+G:\phoneook\onlinephonebook\OnlinePhoneBook\obj\Debug\OnlinePhoneBook.csprojResolveAssemblyReference.cache
+G:\New folder (2)\OnlinePhoneBook\bin\roslyn\csc.exe
+G:\New folder (2)\OnlinePhoneBook\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+G:\New folder (2)\OnlinePhoneBook\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+G:\New folder (2)\OnlinePhoneBook\bin\roslyn\Microsoft.CodeAnalysis.dll
+G:\New folder (2)\OnlinePhoneBook\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+G:\New folder (2)\OnlinePhoneBook\bin\roslyn\Microsoft.CSharp.Core.targets
+G:\New folder (2)\OnlinePhoneBook\bin\roslyn\Microsoft.VisualBasic.Core.targets
+G:\New folder (2)\OnlinePhoneBook\bin\roslyn\System.Collections.Immutable.dll
+G:\New folder (2)\OnlinePhoneBook\bin\roslyn\System.Reflection.Metadata.dll
+G:\New folder (2)\OnlinePhoneBook\bin\roslyn\vbc.exe
+G:\New folder (2)\OnlinePhoneBook\bin\roslyn\VBCSCompiler.exe
+G:\New folder (2)\OnlinePhoneBook\bin\roslyn\VBCSCompiler.exe.config
+G:\New folder (2)\OnlinePhoneBook\bin\OnlinePhoneBook.dll.config
+G:\New folder (2)\OnlinePhoneBook\bin\OnlinePhoneBook.dll
+G:\New folder (2)\OnlinePhoneBook\bin\OnlinePhoneBook.pdb
+G:\New folder (2)\OnlinePhoneBook\bin\EntityFramework.dll
+G:\New folder (2)\OnlinePhoneBook\bin\EntityFramework.SqlServer.dll
+G:\New folder (2)\OnlinePhoneBook\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+G:\New folder (2)\OnlinePhoneBook\bin\Microsoft.Web.Infrastructure.dll
+G:\New folder (2)\OnlinePhoneBook\bin\PagedList.dll
+G:\New folder (2)\OnlinePhoneBook\bin\PagedList.Mvc.dll
+G:\New folder (2)\OnlinePhoneBook\bin\System.Web.Helpers.dll
+G:\New folder (2)\OnlinePhoneBook\bin\System.Web.Mvc.dll
+G:\New folder (2)\OnlinePhoneBook\bin\System.Web.Razor.dll
+G:\New folder (2)\OnlinePhoneBook\bin\System.Web.Webpages.Deployment.dll
+G:\New folder (2)\OnlinePhoneBook\bin\System.Web.Webpages.dll
+G:\New folder (2)\OnlinePhoneBook\bin\System.Web.Webpages.Razor.dll
+G:\New folder (2)\OnlinePhoneBook\bin\EntityFramework.xml
+G:\New folder (2)\OnlinePhoneBook\bin\EntityFramework.SqlServer.xml
+G:\New folder (2)\OnlinePhoneBook\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+G:\New folder (2)\OnlinePhoneBook\bin\PagedList.xml
+G:\New folder (2)\OnlinePhoneBook\bin\PagedList.Mvc.xml
+G:\New folder (2)\OnlinePhoneBook\bin\System.Web.Razor.xml
+G:\New folder (2)\OnlinePhoneBook\bin\System.Web.Webpages.xml
+G:\New folder (2)\OnlinePhoneBook\bin\System.Web.Webpages.Deployment.xml
+G:\New folder (2)\OnlinePhoneBook\bin\System.Web.Webpages.Razor.xml
+G:\New folder (2)\OnlinePhoneBook\bin\System.Web.Helpers.xml
+G:\New folder (2)\OnlinePhoneBook\bin\System.Web.Mvc.xml
+G:\New folder (2)\OnlinePhoneBook\obj\Debug\OnlinePhoneBook.csprojResolveAssemblyReference.cache
+G:\New folder (2)\OnlinePhoneBook\obj\Debug\OnlinePhoneBook.dll
+G:\New folder (2)\OnlinePhoneBook\obj\Debug\OnlinePhoneBook.pdb

@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="dbphonebookModelStoreContainer" CdmEntityContainer="dbphonebookEntitiesContext">
+    <EntitySetMapping Name="contactdetails_tb">
+      <EntityTypeMapping TypeName="dbphonebookModel.contactdetails_tb">
+        <MappingFragment StoreEntitySet="contactdetails_tb">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="fname" ColumnName="fname" />
+          <ScalarProperty Name="lname" ColumnName="lname" />
+          <ScalarProperty Name="maincontact_number" ColumnName="maincontact_number" />
+          <ScalarProperty Name="secondarycontact_number" ColumnName="secondarycontact_number" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="imagepath" ColumnName="imagepath" />
+          <ScalarProperty Name="country_fid" ColumnName="country_fid" />
+          <ScalarProperty Name="type_fid" ColumnName="type_fid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Country_tb">
+      <EntityTypeMapping TypeName="dbphonebookModel.Country_tb">
+        <MappingFragment StoreEntitySet="Country_tb">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="country_name" ColumnName="country_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="type_tb">
+      <EntityTypeMapping TypeName="dbphonebookModel.type_tb">
+        <MappingFragment StoreEntitySet="type_tb">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="type" ColumnName="type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="user_tb">
+      <EntityTypeMapping TypeName="dbphonebookModel.user_tb">
+        <MappingFragment StoreEntitySet="user_tb">
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="user_email" ColumnName="user_email" />
+          <ScalarProperty Name="user_name" ColumnName="user_name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

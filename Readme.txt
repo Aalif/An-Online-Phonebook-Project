@@ -1,0 +1,3 @@
+Project Name: Online Phonebook
+Made By: Nahid-Bin-Ashraf
+Project Discription: In this project, we make a simple online contact book using asp.net mvc. Here a person can insert his number using some basic requirements firstname, maincontactnumber, country, type of numbers. Besides, he can also insert contact number email, optional number,address, picture.In order to access this application a user must login.After login he'll se the summery of this contact info. By, clicking each contact details user can see the details.If the image is not availbe it'll also show in this details section. Besides,a user can also perform add/update/ delete to this phone book. Here he can search the whole contact list by name or contact number. This application is also responsive

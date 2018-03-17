@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbphonebookModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="contactdetails_tb">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="lname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="maincontact_number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="secondarycontact_number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="imagepath" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="country_fid" Type="Int32" />
+    <Property Name="type_fid" Type="Int32" />
+    <NavigationProperty Name="Country_tb" Relationship="Self.FK_contactdetails_tb_Country_tb" FromRole="contactdetails_tb" ToRole="Country_tb" />
+    <NavigationProperty Name="type_tb" Relationship="Self.FK_contactdetails_tb_type_tb" FromRole="contactdetails_tb" ToRole="type_tb" />
+  </EntityType>
+  <EntityType Name="Country_tb">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="country_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="contactdetails_tb" Relationship="Self.FK_contactdetails_tb_Country_tb" FromRole="Country_tb" ToRole="contactdetails_tb" />
+  </EntityType>
+  <EntityType Name="type_tb">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="contactdetails_tb" Relationship="Self.FK_contactdetails_tb_type_tb" FromRole="type_tb" ToRole="contactdetails_tb" />
+  </EntityType>
+  <Association Name="FK_contactdetails_tb_Country_tb">
+    <End Role="Country_tb" Type="Self.Country_tb" Multiplicity="0..1" />
+    <End Role="contactdetails_tb" Type="Self.contactdetails_tb" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country_tb">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="contactdetails_tb">
+        <PropertyRef Name="country_fid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_contactdetails_tb_type_tb">
+    <End Role="type_tb" Type="Self.type_tb" Multiplicity="0..1" />
+    <End Role="contactdetails_tb" Type="Self.contactdetails_tb" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="type_tb">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="contactdetails_tb">
+        <PropertyRef Name="type_fid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="dbphonebookEntitiesContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="contactdetails_tb" EntityType="Self.contactdetails_tb" />
+    <EntitySet Name="Country_tb" EntityType="Self.Country_tb" />
+    <EntitySet Name="type_tb" EntityType="Self.type_tb" />
+    <AssociationSet Name="FK_contactdetails_tb_Country_tb" Association="Self.FK_contactdetails_tb_Country_tb">
+      <End Role="Country_tb" EntitySet="Country_tb" />
+      <End Role="contactdetails_tb" EntitySet="contactdetails_tb" />
+    </AssociationSet>
+    <AssociationSet Name="FK_contactdetails_tb_type_tb" Association="Self.FK_contactdetails_tb_type_tb">
+      <End Role="type_tb" EntitySet="type_tb" />
+      <End Role="contactdetails_tb" EntitySet="contactdetails_tb" />
+    </AssociationSet>
+    <EntitySet Name="user_tb" EntityType="dbphonebookModel.user_tb" />
+  </EntityContainer>
+  <EntityType Name="user_tb">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="user_email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

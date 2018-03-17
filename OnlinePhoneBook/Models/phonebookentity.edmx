@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="dbphonebookModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="contactdetails_tb">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fname" Type="nvarchar" MaxLength="50" />
+          <Property Name="lname" Type="nvarchar" MaxLength="50" />
+          <Property Name="maincontact_number" Type="nvarchar" MaxLength="50" />
+          <Property Name="secondarycontact_number" Type="nvarchar" MaxLength="50" />
+          <Property Name="address" Type="nvarchar" MaxLength="100" />
+          <Property Name="email" Type="nvarchar" MaxLength="50" />
+          <Property Name="imagepath" Type="varchar(max)" />
+          <Property Name="country_fid" Type="int" />
+          <Property Name="type_fid" Type="int" />
+        </EntityType>
+        <EntityType Name="Country_tb">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="country_name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="type_tb">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="type" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="user_tb">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="user_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="user_email" Type="nvarchar" MaxLength="50" />
+          <Property Name="password" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_contactdetails_tb_Country_tb">
+          <End Role="Country_tb" Type="Self.Country_tb" Multiplicity="0..1" />
+          <End Role="contactdetails_tb" Type="Self.contactdetails_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country_tb">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="contactdetails_tb">
+              <PropertyRef Name="country_fid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_contactdetails_tb_type_tb">
+          <End Role="type_tb" Type="Self.type_tb" Multiplicity="0..1" />
+          <End Role="contactdetails_tb" Type="Self.contactdetails_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="type_tb">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="contactdetails_tb">
+              <PropertyRef Name="type_fid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="dbphonebookModelStoreContainer">
+          <EntitySet Name="contactdetails_tb" EntityType="Self.contactdetails_tb" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Country_tb" EntityType="Self.Country_tb" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="type_tb" EntityType="Self.type_tb" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="user_tb" EntityType="Self.user_tb" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_contactdetails_tb_Country_tb" Association="Self.FK_contactdetails_tb_Country_tb">
+            <End Role="Country_tb" EntitySet="Country_tb" />
+            <End Role="contactdetails_tb" EntitySet="contactdetails_tb" />
+          </AssociationSet>
+          <AssociationSet Name="FK_contactdetails_tb_type_tb" Association="Self.FK_contactdetails_tb_type_tb">
+            <End Role="type_tb" EntitySet="type_tb" />
+            <End Role="contactdetails_tb" EntitySet="contactdetails_tb" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="dbphonebookModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="contactdetails_tb">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="lname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="maincontact_number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="secondarycontact_number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="imagepath" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="country_fid" Type="Int32" />
+          <Property Name="type_fid" Type="Int32" />
+          <NavigationProperty Name="Country_tb" Relationship="Self.FK_contactdetails_tb_Country_tb" FromRole="contactdetails_tb" ToRole="Country_tb" />
+          <NavigationProperty Name="type_tb" Relationship="Self.FK_contactdetails_tb_type_tb" FromRole="contactdetails_tb" ToRole="type_tb" />
+        </EntityType>
+        <EntityType Name="Country_tb">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="country_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="contactdetails_tb" Relationship="Self.FK_contactdetails_tb_Country_tb" FromRole="Country_tb" ToRole="contactdetails_tb" />
+        </EntityType>
+        <EntityType Name="type_tb">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="contactdetails_tb" Relationship="Self.FK_contactdetails_tb_type_tb" FromRole="type_tb" ToRole="contactdetails_tb" />
+        </EntityType>
+        <Association Name="FK_contactdetails_tb_Country_tb">
+          <End Role="Country_tb" Type="Self.Country_tb" Multiplicity="0..1" />
+          <End Role="contactdetails_tb" Type="Self.contactdetails_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country_tb">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="contactdetails_tb">
+              <PropertyRef Name="country_fid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_contactdetails_tb_type_tb">
+          <End Role="type_tb" Type="Self.type_tb" Multiplicity="0..1" />
+          <End Role="contactdetails_tb" Type="Self.contactdetails_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="type_tb">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="contactdetails_tb">
+              <PropertyRef Name="type_fid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="dbphonebookEntitiesContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="contactdetails_tb" EntityType="Self.contactdetails_tb" />
+          <EntitySet Name="Country_tb" EntityType="Self.Country_tb" />
+          <EntitySet Name="type_tb" EntityType="Self.type_tb" />
+          <AssociationSet Name="FK_contactdetails_tb_Country_tb" Association="Self.FK_contactdetails_tb_Country_tb">
+            <End Role="Country_tb" EntitySet="Country_tb" />
+            <End Role="contactdetails_tb" EntitySet="contactdetails_tb" />
+          </AssociationSet>
+          <AssociationSet Name="FK_contactdetails_tb_type_tb" Association="Self.FK_contactdetails_tb_type_tb">
+            <End Role="type_tb" EntitySet="type_tb" />
+            <End Role="contactdetails_tb" EntitySet="contactdetails_tb" />
+          </AssociationSet>
+          <EntitySet Name="user_tb" EntityType="dbphonebookModel.user_tb" />
+        </EntityContainer>
+        <EntityType Name="user_tb">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="user_email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="dbphonebookModelStoreContainer" CdmEntityContainer="dbphonebookEntitiesContext">
+          <EntitySetMapping Name="contactdetails_tb">
+            <EntityTypeMapping TypeName="dbphonebookModel.contactdetails_tb">
+              <MappingFragment StoreEntitySet="contactdetails_tb">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="fname" ColumnName="fname" />
+                <ScalarProperty Name="lname" ColumnName="lname" />
+                <ScalarProperty Name="maincontact_number" ColumnName="maincontact_number" />
+                <ScalarProperty Name="secondarycontact_number" ColumnName="secondarycontact_number" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="imagepath" ColumnName="imagepath" />
+                <ScalarProperty Name="country_fid" ColumnName="country_fid" />
+                <ScalarProperty Name="type_fid" ColumnName="type_fid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Country_tb">
+            <EntityTypeMapping TypeName="dbphonebookModel.Country_tb">
+              <MappingFragment StoreEntitySet="Country_tb">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="country_name" ColumnName="country_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="type_tb">
+            <EntityTypeMapping TypeName="dbphonebookModel.type_tb">
+              <MappingFragment StoreEntitySet="type_tb">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="type" ColumnName="type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="user_tb">
+            <EntityTypeMapping TypeName="dbphonebookModel.user_tb">
+              <MappingFragment StoreEntitySet="user_tb">
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="user_email" ColumnName="user_email" />
+                <ScalarProperty Name="user_name" ColumnName="user_name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
